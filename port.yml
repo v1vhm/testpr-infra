@@ -17,7 +17,7 @@
   - cloud-platform-team
   icon: Terraform
   properties:
-    short_name: infra
+    short_name: infra1
   relations:
     product: TESTPR
     repository: v1vhm/testpr-infra
