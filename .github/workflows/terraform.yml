@@ -154,7 +154,7 @@ jobs:
           
   tf-apply:
     needs: [determine-matrix, tf-plan-summary]
-    if: github.event_name == 'push' && fromJSON(needs.determine-matrix.outputs.apply_matrix)[0].name != 'skip'
+    if: ${{ github.event_name == 'push' && fromJSON(needs.determine-matrix.outputs.apply_matrix)[0].name != 'skip' }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: true
