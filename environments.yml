@@ -5,7 +5,3 @@
 environments:
    - name: testpr_dev_uksouth
      order: 1
-#   - name: staging
-#     order: 2
-#   - name: prod
-#     order: 3
