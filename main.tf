@@ -1,6 +1,5 @@
 # Main Terraform configuration
 
-# TODO: Add resources and module invocations here.
 
 data "azurerm_resource_group" "this" {
   name = "rg-TESTPR-dev-uksouth"
