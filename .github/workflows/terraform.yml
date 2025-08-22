@@ -147,8 +147,11 @@ jobs:
             });
       - name: Log summary
         if: github.event_name != 'pull_request'
-        run: echo "${{ steps.summary.outputs.summary }}"
-
+        env:
+          SUMMARY: ${{ steps.summary.outputs.summary }}
+        run: |
+          echo "${SUMMARY:-'- summary: null'}"
+          
   tf-apply:
     needs: [determine-matrix, tf-plan-summary]
     if: github.event_name == 'push' && fromJSON(needs.determine-matrix.outputs.apply_matrix)[0].name != 'skip'
