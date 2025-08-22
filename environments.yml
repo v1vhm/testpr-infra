@@ -5,3 +5,5 @@
 environments:
   - name: testpr_dev_uksouth
     order: 1
+  - name: testpr_test_uksouth
+    order: 2
