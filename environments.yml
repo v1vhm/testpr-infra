@@ -2,6 +2,6 @@
 # Lower numbers in the "order" field are applied first.
 # Uncomment and customise the entries below to match your environments.
 #
-environments:
-   - name: testpr_dev_uksouth
-     order: 1
+# environments:
+#   - name: testpr_dev_uksouth
+#     order: 1
