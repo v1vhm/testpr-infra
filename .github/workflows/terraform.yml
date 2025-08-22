@@ -42,8 +42,8 @@ jobs:
             echo 'plan_matrix=[{"name":"skip","github_environment":"skip"}]' >> "$GITHUB_OUTPUT"
             echo 'apply_matrix=[{"name":"skip","github_environment":"skip"}]' >> "$GITHUB_OUTPUT"
           else
-            plan=$(echo "$matrix" | jq '[.[] | {name: .name, github_environment: (.name + "-plan")}]')
-            apply=$(echo "$matrix" | jq '[.[] | {name: .name, github_environment: (.name + "-apply")}]')
+            plan=$(echo "$matrix" | jq -c '[.[] | {name: .name, github_environment: (.name + "-plan")}]')
+            apply=$(echo "$matrix" | jq -c '[.[] | {name: .name, github_environment: (.name + "-apply")}]')
             echo "plan_matrix=$plan" >> "$GITHUB_OUTPUT"
             echo "apply_matrix=$apply" >> "$GITHUB_OUTPUT"
           fi
