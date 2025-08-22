@@ -2,12 +2,15 @@
 
 # TODO: Add resources and module invocations here.
 
-module "avm-ptn-function-app-storage-private-endpoints" {
-  source  = "Azure/avm-ptn-function-app-storage-private-endpoints/azurerm"
-  version = "0.2.0"
-  
-  name                = "v1vhm-testpr-fnapp"
-  resource_group_name = "rg-TESTPR-dev-uksouth"
-  os_type             = "linux"
+data "azurerm_resource_group" "this" {
+  name = "rg-TESTPR-dev-uksouth"
+}
 
+module "avm-ptn-aiml-ai-foundry" {
+  source  = "Azure/avm-ptn-aiml-ai-foundry/azurerm"
+  version = "0.6.0"
+
+  location                   = "uksouth"
+  base_name                  = "v1vhm-ai"
+  resource_group_resource_id = azurerm_resource_group.this.id
 }
