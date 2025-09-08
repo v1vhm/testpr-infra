@@ -111,7 +111,7 @@ jobs:
     steps:
       - name: Generate summary
         id: summary
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         env:
           MATRIX: ${{ needs.determine-matrix.outputs.plan_matrix }}
         with:
@@ -134,7 +134,7 @@ jobs:
             }
       - name: Comment summary
         if: github.event_name == 'pull_request' && fromJSON(needs.determine-matrix.outputs.plan_matrix)[0].name != 'skip'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v8
         env:
           BODY: ${{ steps.summary.outputs.summary }}
         with:
