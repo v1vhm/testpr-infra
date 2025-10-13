@@ -3,7 +3,7 @@
 
 module "avm-ptn-aiml-ai-foundry" {
   source  = "Azure/avm-ptn-aiml-ai-foundry/azurerm"
-  version = "0.6.0"
+  version = "0.7.0"
 
   location                   = "uksouth"
   base_name                  = "v1vhm-ai"
